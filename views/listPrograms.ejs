@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Data Visualization</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/feather.css">
+    <link href="https://fonts.googleapis.com/css?family=Jura|Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  </head>
+  <script type="text/javascript">
+      if(localStorage.getItem("user_id") === null || localStorage.getItem("user_id") == "undefined" ||
+	             localStorage.getItem("user_name") === null || localStorage.getItem("user_name") == "undefined" ||
+	             localStorage.getItem("user_surname") === null || localStorage.getItem("user_surname") == "undefined" ||
+	             localStorage.getItem("user_email") === null || localStorage.getItem("user_email") == "undefined" ) window.location="/login";
+  </script>
+  <body>
+    <header>
+      <div class="dash">
+        <i class="feather icon-activity"></i>RR & RSSMD DATA VISUALIZATION
+      </div>
+      <div class="nav">
+        <div class="">
+
+        </div>
+        <div class="nav_info">
+	  <i class="feather icon-smartphone" title="Phone State" id="phoneState"></i>
+          <i class="feather icon-disc" title="Parameter Device State" id="megaState"></i>
+          <select class="modes" name="mode">
+            <option value="2">HIGH INTENSITY</option>
+            <option value="1">NORMAL INTENSITY</option>
+            <option value="0">LIGHT INTENSITY</option>
+          </select>
+	  <i class="feather icon-stop-circle" title="Stop Session" id="stopSession"></i>
+          <i class="feather icon-play-circle" title="Start a New Session" id="newSession"></i>
+          <i class="feather icon-cpu" title="List Devices" id="listDevices"></i>
+          <i class="feather icon-plus-circle" title="Add Device" id="addDevice"></i>
+          <i class="feather icon-calendar" title="List Programs" id="listPrograms"></i>
+          <div class="circle">
+            <img src="http://72.167.55.223/wp-content/uploads/how-to-become-a-software-engineer.jpg" alt="couldn't load">
+          </div>
+          <span id="username">UserName</span>
+          <i class="feather icon-log-out" style="margin-left:10px;font-size:0.65em"></i>
+        </div>
+
+      </div>
+    </header>
+    <div class="container">
+      <div class="device">
+        <i class="feather icon-calendar" ></i>
+        <h4 class="porgram_name">Name</h4>
+        <h4 class="device_id">Program ID</h4>
+        <i class="feather icon-chevron-down" ></i>
+        <i class="feather icon-chevron-down" ></i>
+      </div>
+    </div>
+
+    <!-- Resources -->
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/listPrograms.js"></script>
+  </body>
+</html>

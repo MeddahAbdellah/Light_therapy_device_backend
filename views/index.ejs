@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Data Visualization</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/feather.css">
+    <link href="https://fonts.googleapis.com/css?family=Jura|Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  </head>
+  <script type="text/javascript">
+    if(localStorage.getItem("user_id") === null || localStorage.getItem("user_id") == "undefined" ||
+       localStorage.getItem("user_name") === null || localStorage.getItem("user_name") == "undefined" ||
+       localStorage.getItem("user_surname") === null || localStorage.getItem("user_surname") == "undefined" ||
+       localStorage.getItem("user_email") === null || localStorage.getItem("user_email") == "undefined" ) window.location="/login";
+  </script>
+  <body>
+    <header>
+      <div class="dash">
+        <i class="feather icon-activity"></i>RR & RSSMD DATA VISUALIZATION
+      </div>
+      <div class="nav">
+        <div class="">
+
+        </div>
+        <div class="nav_info">
+          <h4 id="timer">00:05</h4>
+      	  <i class="feather icon-smartphone" title="Phone State" id="phoneState"></i>
+      	  <i class="feather icon-disc" title="Parameter Device State" id="megaState"></i>
+          <select class="modes" name="mode">
+            <option value="2">HIGH INTENSITY</option>
+            <option value="1">NORMAL INTENSITY</option>
+            <option value="0">LIGHT INTENSITY</option>
+          </select>
+          <i class="feather icon-stop-circle" title="Stop Session" id="stopSession"></i>
+          <i class="feather icon-play-circle" title="Start a New Session" id="newSession"></i>
+          <i class="feather icon-cpu" title="List Devices" id="listDevices"></i>
+          <i class="feather icon-plus-circle" title="Add Device" id="addDevice"></i>
+          <i class="feather icon-calendar" title="List Programs" id="listPrograms"></i>
+          <div class="circle">
+            <img src="http://72.167.55.223/wp-content/uploads/how-to-become-a-software-engineer.jpg" alt="couldn't load">
+          </div>
+          <span id="username">-----------</span>
+          <i class="feather icon-log-out" style="margin-left:10px;font-size:0.65em"></i>
+        </div>
+
+      </div>
+    </header>
+    <div class="container">
+      <div class="container_header">
+        <div class="container_header_left">
+          <div class="my_icon">
+            <i class="feather icon-home"></i>
+          </div>
+          <div class="icon_description">
+            <h3>Dashboard</h3>
+            <h6>Device data containing RSSMD data.</h6>
+          </div>
+        </div>
+        <div class="container_header_right">
+          <i class="feather icon-save"></i>
+          <h5 id="session"><span> / </span> Session ID : ------------</h5>
+        </div>
+      </div>
+      <div class="container_main">
+        <div class="main_chart">
+          <h4>RR live Data</h4>
+          <div class="line"></div>
+          <div id="rrData_live"></div>
+        </div>
+      </div>
+      <div class="container_main">
+	<div class="main_chart">
+	  <h4>RRSSMD live Data</h4>
+	  <div class="line"></div>
+	  <div id="rssmd_chart_main"></div>
+	  <form action="/" method="get">
+		  <input name="n_main" value="<%= n %>" type="number">
+	  	<input type="submit" value="Recalculate">
+	  </form>
+	</div>
+      </div>
+
+    </div>
+
+    <!-- Resources -->
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="./js/moment.min.js"></script>
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <script src="./js/charts_manager.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

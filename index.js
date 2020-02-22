@@ -429,7 +429,7 @@ app.post('/newSession', (req, res) => {
   });
 });
 app.post('/insertParams', (req, res) => {
-  console.log(req.body);
+  console.log(JSON.parse(req.body));
 });
 app.post('/insertHrData', (req, res) => {
   console.log(req.body);

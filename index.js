@@ -429,7 +429,7 @@ app.post('/newSession', (req, res) => {
   });
 });
 app.post('/insertParams',express.json({type: '*/*'}), (req, res) => {
-  console.log(req.body[0]);
+  console.log(req.body[0].param_id);
 });
 app.post('/insertHrData',express.json({type: '*/*'}), (req, res) => {
   console.log(req.body);

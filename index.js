@@ -431,9 +431,9 @@ app.post('/newSession', (req, res) => {
 app.post('/insertParams',express.json({type: '*/*'}), (req, res) => {
   params = Object.values(req.body);
   console.log(params);
-  for(var i=0 ; i < req.body.length ; i++){
-    delete req.body[i].param_id;
-    con.query("INSERT INTO parameters SET ?", req.body[i], (error, result) => {
+  for(var i=0 ; i < params.length ; i++){
+    delete params[i].param_id;
+    con.query("INSERT INTO parameters SET ?", params[i], (error, result) => {
       if (error) throw error;
       console.log(result);
       res.send("received params");

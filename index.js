@@ -436,11 +436,10 @@ app.post('/insertParams',express.json({type: '*/*'}), (req, res) => {
       con.query("INSERT INTO parameters SET ?", params[i], (error, result) => {
         if (error) throw error;
         console.log(result);
-        res.send("received params");
       });
     }
   }
-
+  res.send("received params");
 });
 app.post('/insertHrData',express.json({type: '*/*'}), (req, res) => {
   console.log(req.body);

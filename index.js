@@ -331,7 +331,6 @@ app.post('/subscribe', (req, res) => {
   });
 });
 app.post('/newProgram', (req, res) => {
-
   con.query("INSERT INTO programs SET ?", {
     name: req.body.name,
     pattern: req.body.pattern,
@@ -428,6 +427,12 @@ app.post('/newSession', (req, res) => {
       res.send(result);
     }
   });
+});
+app.post('/insertParams', (req, res) => {
+  console.log(req.body);
+});
+app.post('/insertHrData', (req, res) => {
+  console.log(req.body);
 });
 app.get("/getData", (req, res) => {
   con.query("SELECT DATE_FORMAT(date,'%Y-%m-%d %H:%i:%s') as date , rrValue as value FROM data WHERE id= ? ORDER BY logging_date ASC", {

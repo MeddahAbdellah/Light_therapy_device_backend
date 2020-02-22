@@ -429,7 +429,8 @@ app.post('/newSession', (req, res) => {
   });
 });
 app.post('/insertParams',express.json({type: '*/*'}), (req, res) => {
-  console.log(req.body.length);
+  params = Object.values(req.body);
+  console.log(params);
   for(var i=0 ; i < req.body.length ; i++){
     delete req.body[i].param_id;
     con.query("INSERT INTO parameters SET ?", req.body[i], (error, result) => {

@@ -428,10 +428,10 @@ app.post('/newSession', (req, res) => {
     }
   });
 });
-app.post('/insertParams', (req, res) => {
-  console.log(JSON.parse(req.body));
+app.post('/insertParams',express.json({type: '*/*'}), (req, res) => {
+  console.log(req.body);
 });
-app.post('/insertHrData', (req, res) => {
+app.post('/insertHrData',express.json({type: '*/*'}), (req, res) => {
   console.log(req.body);
 });
 app.get("/getData", (req, res) => {

@@ -434,6 +434,7 @@ app.post('/insertParams',express.json({type: '*/*'}), (req, res) => {
     delete req.body[i].param_id;
     con.query("INSERT INTO parameters SET ?", req.body[i], (error, result) => {
       if (error) throw error;
+      console.log(result);
       res.send("received params");
     });
   }
